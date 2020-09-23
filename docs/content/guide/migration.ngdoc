@@ -282,10 +282,9 @@ elements and if the values do not pass the regular URL sanitization, they will
 break.
 
 To fix this you need to ensure that the values used for binding to the affected
-`xlink:href` contexts are considered safe URLs, e.g. by trusting them in
-`$compileProvider`'s `aHrefSanitizationWhitelist` (called `aHrefSanitizationTrustedUrlList` form
-1.8.1 onwards) (for `<a>` elements) or `imgSrcSanitizationWhitelist` (called
-`imgSrcSanitizationTrustedUrlList` from 1.8.1 onwards) (for `<image>` elements).
+`xlink:href` contexts are considered safe URLs, e.g. by whitelisting them in
+`$compileProvider`'s `aHrefSanitizationTrustedUri` (for `<a>` elements) or
+`imgSrcSanitizationTrustedUri` (for `<image>` elements).
 
 <hr />
 

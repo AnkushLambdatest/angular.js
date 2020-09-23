@@ -127,8 +127,8 @@ describe('sanitizeUri', function() {
 
     it('should allow reconfiguration of the src trusted URIs', function() {
       var returnVal;
-      expect(sanitizeUriProvider.imgSrcSanitizationTrustedUrlList() instanceof RegExp).toBe(true);
-      returnVal = sanitizeUriProvider.imgSrcSanitizationTrustedUrlList(/javascript:/);
+      expect(sanitizeUriProvider.imgSrcSanitizationTrustedUri() instanceof RegExp).toBe(true);
+      returnVal = sanitizeUriProvider.imgSrcSanitizationTrustedUri(/javascript:/);
       expect(returnVal).toBe(sanitizeUriProvider);
 
       testUrl = 'javascript:doEvilStuff()';
@@ -228,8 +228,8 @@ describe('sanitizeUri', function() {
 
     it('should allow reconfiguration of the href trusted URIs', function() {
       var returnVal;
-      expect(sanitizeUriProvider.aHrefSanitizationTrustedUrlList() instanceof RegExp).toBe(true);
-      returnVal = sanitizeUriProvider.aHrefSanitizationTrustedUrlList(/javascript:/);
+      expect(sanitizeUriProvider.aHrefSanitizationTrustedUri() instanceof RegExp).toBe(true);
+      returnVal = sanitizeUriProvider.aHrefSanitizationTrustedUri(/javascript:/);
       expect(returnVal).toBe(sanitizeUriProvider);
 
       testUrl = 'javascript:doEvilStuff()';

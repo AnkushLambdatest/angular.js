@@ -151,30 +151,30 @@ describe('$compile', function() {
 
   describe('configuration', function() {
 
-    it('should use $$sanitizeUriProvider for reconfiguration of the `aHrefSanitizationTrustedUrlList`', function() {
+    it('should use $$sanitizeUriProvider for reconfiguration of the `aHrefSanitizationTrustedUri`', function() {
       module(function($compileProvider, $$sanitizeUriProvider) {
         var newRe = /safe:/, returnVal;
 
-        expect($compileProvider.aHrefSanitizationTrustedUrlList()).toBe($$sanitizeUriProvider.aHrefSanitizationTrustedUrlList());
-        returnVal = $compileProvider.aHrefSanitizationTrustedUrlList(newRe);
+        expect($compileProvider.aHrefSanitizationTrustedUri()).toBe($$sanitizeUriProvider.aHrefSanitizationTrustedUri());
+        returnVal = $compileProvider.aHrefSanitizationTrustedUri(newRe);
         expect(returnVal).toBe($compileProvider);
-        expect($$sanitizeUriProvider.aHrefSanitizationTrustedUrlList()).toBe(newRe);
-        expect($compileProvider.aHrefSanitizationTrustedUrlList()).toBe(newRe);
+        expect($$sanitizeUriProvider.aHrefSanitizationTrustedUri()).toBe(newRe);
+        expect($compileProvider.aHrefSanitizationTrustedUri()).toBe(newRe);
       });
       inject(function() {
         // needed to the module definition above is run...
       });
     });
 
-    it('should use $$sanitizeUriProvider for reconfiguration of the `imgSrcSanitizationTrustedUrlList`', function() {
+    it('should use $$sanitizeUriProvider for reconfiguration of the `imgSrcSanitizationTrustedUri`', function() {
       module(function($compileProvider, $$sanitizeUriProvider) {
         var newRe = /safe:/, returnVal;
 
-        expect($compileProvider.imgSrcSanitizationTrustedUrlList()).toBe($$sanitizeUriProvider.imgSrcSanitizationTrustedUrlList());
-        returnVal = $compileProvider.imgSrcSanitizationTrustedUrlList(newRe);
+        expect($compileProvider.imgSrcSanitizationTrustedUri()).toBe($$sanitizeUriProvider.imgSrcSanitizationTrustedUri());
+        returnVal = $compileProvider.imgSrcSanitizationTrustedUri(newRe);
         expect(returnVal).toBe($compileProvider);
-        expect($$sanitizeUriProvider.imgSrcSanitizationTrustedUrlList()).toBe(newRe);
-        expect($compileProvider.imgSrcSanitizationTrustedUrlList()).toBe(newRe);
+        expect($$sanitizeUriProvider.imgSrcSanitizationTrustedUri()).toBe(newRe);
+        expect($compileProvider.imgSrcSanitizationTrustedUri()).toBe(newRe);
       });
       inject(function() {
         // needed to the module definition above is run...

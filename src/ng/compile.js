@@ -1698,7 +1698,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
   /**
    * @ngdoc method
-   * @name $compileProvider#aHrefSanitizationTrustedUrlList
+   * @name $compileProvider#aHrefSanitizationTrustedUri
    * @kind function
    *
    * @description
@@ -1708,7 +1708,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * The sanitization is a security measure aimed at preventing XSS attacks via html links.
    *
    * Any url about to be assigned to a[href] via data-binding is first normalized and turned into
-   * an absolute url. Afterwards, the url is matched against the `aHrefSanitizationTrustedUrlList`
+   * an absolute url. Afterwards, the url is matched against the `aHrefSanitizationTrustedUri`
    * regular expression. If a match is found, the original url is written into the dom. Otherwise,
    * the absolute url is prefixed with `'unsafe:'` string and only then is it written into the DOM.
    *
@@ -1716,40 +1716,20 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * @returns {RegExp|ng.$compileProvider} Current RegExp if called without value or self for
    *    chaining otherwise.
    */
-  this.aHrefSanitizationTrustedUrlList = function(regexp) {
+  this.aHrefSanitizationTrustedUri = function(regexp) {
     if (isDefined(regexp)) {
-      $$sanitizeUriProvider.aHrefSanitizationTrustedUrlList(regexp);
+      $$sanitizeUriProvider.aHrefSanitizationTrustedUri(regexp);
       return this;
     } else {
-      return $$sanitizeUriProvider.aHrefSanitizationTrustedUrlList();
+      return $$sanitizeUriProvider.aHrefSanitizationTrustedUri();
     }
   };
+  this.aHrefSanitizationWhitelist = this.aHrefSanitizationTrustedUri;
 
 
   /**
    * @ngdoc method
-   * @name $compileProvider#aHrefSanitizationWhitelist
-   * @kind function
-   *
-   * @deprecated
-   * sinceVersion="1.8.1"
-   *
-   * This function is deprecated. Use {@link $compileProvider#aHrefSanitizationTrustedUrlList
-   * aHrefSanitizationTrustedUrlList} instead.
-   */
-  Object.defineProperty(this, 'aHrefSanitizationWhitelist', {
-    get: function() {
-      return this.aHrefSanitizationTrustedUrlList;
-    },
-    set: function(regexp) {
-      this.aHrefSanitizationTrustedUrlList = regexp;
-    }
-  });
-
-
-  /**
-   * @ngdoc method
-   * @name $compileProvider#imgSrcSanitizationTrustedUrlList
+   * @name $compileProvider#imgSrcSanitizationTrustedUri
    * @kind function
    *
    * @description
@@ -1759,7 +1739,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * The sanitization is a security measure aimed at prevent XSS attacks via html links.
    *
    * Any url about to be assigned to img[src] via data-binding is first normalized and turned into
-   * an absolute url. Afterwards, the url is matched against the `imgSrcSanitizationTrustedUrlList`
+   * an absolute url. Afterwards, the url is matched against the `imgSrcSanitizationTrustedUri`
    * regular expression. If a match is found, the original url is written into the dom. Otherwise,
    * the absolute url is prefixed with `'unsafe:'` string and only then is it written into the DOM.
    *
@@ -1767,14 +1747,15 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * @returns {RegExp|ng.$compileProvider} Current RegExp if called without value or self for
    *    chaining otherwise.
    */
-  this.imgSrcSanitizationTrustedUrlList = function(regexp) {
+  this.imgSrcSanitizationTrustedUri = function(regexp) {
     if (isDefined(regexp)) {
-      $$sanitizeUriProvider.imgSrcSanitizationTrustedUrlList(regexp);
+      $$sanitizeUriProvider.imgSrcSanitizationTrustedUri(regexp);
       return this;
     } else {
-      return $$sanitizeUriProvider.imgSrcSanitizationTrustedUrlList();
+      return $$sanitizeUriProvider.imgSrcSanitizationTrustedUri();
     }
   };
+  this.imgSrcSanitizationWhitelist = this.imgSrcSanitizationTrustedUri;
 
 
   /**
