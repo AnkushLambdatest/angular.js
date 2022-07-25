@@ -1,7 +1,7 @@
 ---
 framework: jasmine
 blocklist:
-  - "./i18n/spec/converterSpec.js##should convert number objectA"
+  - "./i18n/spec/converterSpec.js##convertNumberData##should convert number objectA"
   
 postMerge:
   pattern:
