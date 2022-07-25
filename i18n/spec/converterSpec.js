@@ -55,18 +55,3 @@ describe('convertDatetimeData', function() {
     expect(processedData.shortTime).toBe('h');
   });
 });
-
-
-describe('convertNumberData', function() {
-  var convert = converter.convertNumberData,
-      dataObj = { DECIMAL_SEP: ',',
-                  GROUP_SEP: '.',
-                  DECIMAL_PATTERN: '#,##0.###;#,##0.###-',
-                  CURRENCY_PATTERN: '\u00A4#,##0.00;\u00A4#,##0.00-',
-                  DEF_CURRENCY_CODE: 'USD' };
-
-  it('should convert number objectA', function() {
-    var processedData = convert(dataObj, {USD: ['x', '$', 'y']});
-    expect(processedData.DECIMAL_SEP).toBe(',m');
-  });
-});
