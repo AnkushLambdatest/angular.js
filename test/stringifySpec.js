@@ -1,6 +1,6 @@
 'use strict';
 
-describe.skip('toDebugString', function() {
+describe('toDebugString', function() {
   it('should convert its argument to a string', function() {
     expect(toDebugString('string')).toEqual('string');
     expect(toDebugString(123)).toEqual('123');
