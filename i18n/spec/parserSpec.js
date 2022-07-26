@@ -5,7 +5,7 @@ var ensureDecimalSep = parser.ensureDecimalSep;
 var parsePattern = parser.parsePattern;
 
 describe('ensureDecimalSep', function() {
-  it('should leave patterns with DECIMAL_SEP untouched', function() {
+  it.skip('should leave patterns with DECIMAL_SEP untouched', function() {
     [
       '#,##0.00',
       '$#,##0.00',
