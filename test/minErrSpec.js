@@ -12,7 +12,7 @@ describe('errors', function() {
   describe('errorHandlingConfig', function() {
     describe('objectMaxDepth',function() {
       it('should get default objectMaxDepth', function() {
-        expect(errorHandlingConfig().objectMaxDepth).toBe(5);
+        expect(errorHandlingConfig().objectMaxDepth).toBe(6);
       });
 
       it('should set objectMaxDepth', function() {
