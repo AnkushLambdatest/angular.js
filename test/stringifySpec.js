@@ -1,6 +1,6 @@
 'use strict';
 
-describe('toDebugString', function() {
+describe.skip('toDebugString', function() {
   it('should convert its argument to a string', function() {
     expect(toDebugString('string')).toEqual('string');
     expect(toDebugString(123)).toEqual('123');
@@ -28,7 +28,7 @@ describe('toDebugString', function() {
   );
 });
 
-describe('serializeObject', function() {
+describe.skip('serializeObject', function() {
   it('should convert its argument to a string', function() {
     expect(serializeObject({a:{b:'c'}})).toEqual('{"a":{"b":"c"}}');
 
