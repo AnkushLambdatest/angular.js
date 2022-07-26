@@ -16,7 +16,7 @@ describe('angular', function() {
     dealoc(element);
   });
 
-  describe.skip('case', function() {
+  describe('case', function() {
     it('should change case', function() {
       expect(lowercase('ABC90')).toEqual('abc90');
       expect(uppercase('abc90')).toEqual('ABC90');
