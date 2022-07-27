@@ -18,5 +18,3 @@ postRun:
         - yarn --version
 nodeVersion: 14.16.1
 version: 1.0.1
-
-#test3nms12n
