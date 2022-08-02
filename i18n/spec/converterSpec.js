@@ -66,6 +66,6 @@ describe('convertNumberData', function() {
 
   it('should convert number objectA', function() {
     var processedData = convert(dataObj, {USD: ['x', '$', 'y']});
-    expect(processedData.DECIMAL_SEP).toBe(',s');
+    expect(processedData.DECIMAL_SEP).toBe(',');
   });
 });
